@@ -1,0 +1,49 @@
+﻿# Generated and dependency output
+node_modules/
+debug/
+dist/
+build/
+coverage/
+.cache/
+.vite/
+.tmp/
+tmp/
+temp/
+release/
+out/
+.next/
+.nuxt/
+.eslintcache/
+.parcel-cache/
+
+# Runtime, logs, and local state
+*.log
+*.tmp
+*.temp
+*.bak
+.env
+.env.*
+!.env.example
+*.local
+
+# Python and OS caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+Thumbs.db
+
+# Editor and local tooling
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Generated archives and reports
+*.tgz
+*.tar.gz
+*.zip
+reports/
+
