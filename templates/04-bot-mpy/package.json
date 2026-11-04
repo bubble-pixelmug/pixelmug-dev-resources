@@ -1,0 +1,9 @@
+{
+  "name": "template-4-bot-mpy",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@jeejio-bubble/bot": "0.1.9"
+  }
+}
+

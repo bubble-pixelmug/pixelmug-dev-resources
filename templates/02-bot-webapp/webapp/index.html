@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PixelMug Bot + WebApp template</title>
+  <script>
+    const bubbleBridge = document.createElement('script');
+    bubbleBridge.src = 'jeesdk://jeeweb.js';
+    document.head.appendChild(bubbleBridge);
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">PixelMug App Template 2</p>
+    <h1>Bot + WebApp</h1>
+    <p>This page demonstrates a WebApp calling a built-in device API.</p>
+
+    <label>Sample input
+      <input id="text" maxlength="60" value="Hello PixelMug">
+    </label>
+    <button id="send" class="primary" disabled>Call device API</button>
+    <p id="status" role="status">Loading connected devices...</p>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

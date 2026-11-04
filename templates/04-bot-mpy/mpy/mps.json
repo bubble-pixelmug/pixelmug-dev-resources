@@ -1,0 +1,12 @@
+{
+  "name": "template-4-mpy",
+  "version": "1.0.0",
+  "description": "Minimal PixelMug device-side MPY application",
+  "dependencies": [
+    {
+      "name": "micropyxel",
+      "version": ">=1.0.0"
+    }
+  ],
+  "date": "2026-11-04"
+}

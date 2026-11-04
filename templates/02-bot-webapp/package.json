@@ -1,0 +1,10 @@
+{
+  "name": "template-2-bot-webapp",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@jeejio-bubble/bot": "0.1.9"
+  }
+}
+

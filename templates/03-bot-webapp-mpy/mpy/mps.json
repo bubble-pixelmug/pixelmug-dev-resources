@@ -1,0 +1,12 @@
+{
+  "name": "template-3-mpy",
+  "version": "1.0.0",
+  "description": "Move a square on PixelMug from a WebApp over BLE",
+  "dependencies": [
+    {
+      "name": "micropyxel",
+      "version": ">=1.0.0"
+    }
+  ],
+  "date": "2026-10-19"
+}
