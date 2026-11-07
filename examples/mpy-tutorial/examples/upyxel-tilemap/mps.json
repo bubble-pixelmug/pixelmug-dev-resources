@@ -1,0 +1,11 @@
+{
+  "name": "upyxel-tilemap",
+  "version": "1.0.0",
+  "description": "MicroPyxel tilemap creation, editing, and rendering demo",
+  "dependencies": [
+    {
+      "name": "micropyxel",
+      "version": ">=1.0.0"
+    }
+  ]
+}
