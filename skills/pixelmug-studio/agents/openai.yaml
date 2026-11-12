@@ -1,0 +1,4 @@
+interface:
+  display_name: PixelMug Studio
+  short_description: Generate complete PixelMug Studio applications
+  default_prompt: Build a complete PixelMug Studio application from this idea.

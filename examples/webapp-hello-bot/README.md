@@ -19,4 +19,4 @@ This is a minimal two-way communication example. The Bot provides a WebApp entry
 | `webapp/src/style.css` | Styles the WebApp |
 | `webapp/vite.config.js` | Configures relative asset URLs for Studio |
 
-Related documentation: [Hello WebApp](../../../../docs/webapp/quick-start.md).
+Related documentation: [WebApp SDK](https://github.com/bubble-pixelmug/pixelmug-docs/blob/main/en/webapp/index.md).

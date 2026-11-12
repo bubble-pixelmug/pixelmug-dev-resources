@@ -59,7 +59,7 @@ async function sendStatus(ctx) {
   await ctx.sendText([
     'Slot: ' + bound.slot,
     'Name: ' + (bound.name || bound.deviceId),
-    'Device Defined: ' + (bound.talId || 'Unknown'),
+    'Device Defined: ' + (bound.deviceTalId || 'Unknown'),
     'Status: ' + online,
   ].join('\n'));
 }

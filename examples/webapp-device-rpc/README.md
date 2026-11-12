@@ -22,4 +22,4 @@ The Bot registers a PixelMug S1 slot and accepts PixelMug P1 through `compatible
 | `webapp/src/style.css` | Styles the WebApp |
 | `webapp/vite.config.js` | Configures relative asset URLs for Studio |
 
-Related documentation: [Quick start](../../../../docs/webapp/quick-start.md).
+Related documentation: [Call a Device RPC](https://github.com/bubble-pixelmug/pixelmug-docs/blob/main/en/webapp/device-rpc.md).
