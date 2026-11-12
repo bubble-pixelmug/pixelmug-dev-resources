@@ -11,6 +11,15 @@ The resources are organized by purpose:
 | [`examples/`](./examples/) | Focused, complete examples for Bot SDK, WebApp SDK, BLE, device events, media, networking, and MPY. |
 | [`skills/`](./skills/) | Coding-agent instructions and helpers for generating complete PixelMug Studio applications. |
 
+## Clone the resources
+
+Clone the repository using its expected directory name:
+
+```sh
+git clone https://github.com/bubble-pixelmug/pixelmug-dev-resources.git pixelmug-dev-resources
+cd pixelmug-dev-resources
+```
+
 ## Requirements
 
 To run these projects, install PixelMug Studio and have:

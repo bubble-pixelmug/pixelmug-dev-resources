@@ -12,11 +12,17 @@ Required local directories:
 
 Resolution order:
 
-1. `<current-workspace>/dev-resources`.
+1. `<current-workspace>/pixelmug-dev-resources`.
 2. `PIXELMUG_RESOURCES` if set.
 3. A user-supplied resource root in the request.
 
-If none exists, stop and tell the user to clone the PixelMug development resources. Do not silently generate a generic project.
+If none exists, stop and tell the user to clone the repository with its expected directory name:
+
+```sh
+git clone https://github.com/bubble-pixelmug/pixelmug-dev-resources.git pixelmug-dev-resources
+```
+
+Do not silently generate a generic project.
 
 SDK documentation is remote and English-only:
 

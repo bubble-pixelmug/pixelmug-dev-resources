@@ -7,7 +7,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const skillRoot = resolve(here, '..');
 const workspace = process.cwd();
 const candidates = [
-  join(workspace, 'dev-resources'),
+  workspace,
+  join(workspace, 'pixelmug-dev-resources'),
   process.env.PIXELMUG_RESOURCES ? resolve(process.env.PIXELMUG_RESOURCES) : null,
   join(skillRoot, '..', '..'),
 ].filter(Boolean);

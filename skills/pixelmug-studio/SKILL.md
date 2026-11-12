@@ -11,11 +11,11 @@ Use this skill when a user wants a complete PixelMug application generated in th
 
 ## Resource policy
 
-Resolve these local resources from the current workspace or from an explicitly configured PixelMug resource root:
+Resolve these local resources from the current workspace or from an explicitly configured PixelMug resource root. A standalone clone normally has the directory name `pixelmug-dev-resources`:
 
-- `dev-resources/templates` (required)
-- `dev-resources/examples` (required)
-- `dev-resources/getting-started` (required)
+- `<resource-root>/templates` (required)
+- `<resource-root>/examples` (required)
+- `<resource-root>/getting-started` (required)
 
 Do not require or search for a local `tools/studio` checkout. Users normally install Studio rather than clone its source.
 

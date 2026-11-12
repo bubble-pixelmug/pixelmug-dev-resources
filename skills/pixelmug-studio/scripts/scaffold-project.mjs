@@ -35,14 +35,14 @@ console.log(JSON.stringify({ project: destination, template, installed: !args.sk
 
 async function locateResources() {
   const candidates = [
-    join(process.cwd(), 'dev-resources'),
+    join(process.cwd(), 'pixelmug-dev-resources'),
     process.env.PIXELMUG_RESOURCES ? resolve(process.env.PIXELMUG_RESOURCES) : null,
-    resolve(dirname(fileURLToPath(import.meta.url)), '../../../..', 'dev-resources'),
+    resolve(dirname(fileURLToPath(import.meta.url)), '../../..'),
   ].filter(Boolean);
   for (const candidate of candidates) {
     if (await isDirectory(join(candidate, 'templates'))) return resolve(candidate);
   }
-  usage('Could not locate dev-resources. Clone the PixelMug development resources or set PIXELMUG_RESOURCES.');
+  usage('Could not locate pixelmug-dev-resources. \nClone it from https://github.com/bubble-pixelmug/pixelmug-dev-resources or set PIXELMUG_RESOURCES environment variable.');
 }
 
 async function copyClean(sourceDir, targetDir) {
