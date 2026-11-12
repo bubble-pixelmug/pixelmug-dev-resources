@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { access, readFile, stat } from 'node:fs/promises';
+import { access, readFile, readdir, rm, stat } from 'node:fs/promises';
 import { extname, join, relative, resolve } from 'node:path';
 import { spawn } from 'node:child_process';
 
@@ -35,6 +35,7 @@ if (await isDirectory(mpy)) {
   if (await isFile(join(mpy, '__main__.py')) && await commandExists('python')) {
     if (await runCheck('python', ['-m', 'py_compile', join(mpy, '__main__.py')], project)) warnings.push('MPY entry did not pass host Python syntax check');
   }
+  await cleanupPythonCaches(mpy);
 }
 
 const result = { project, valid: errors.length === 0, errors, warnings };
@@ -46,6 +47,18 @@ async function readJson(path, label) { try { const data = JSON.parse(await readF
 async function isFile(path) { try { return (await stat(path)).isFile(); } catch { return false; } }
 async function isDirectory(path) { try { return (await stat(path)).isDirectory(); } catch { return false; } }
 function isNonEmptyString(value) { return typeof value === 'string' && value.trim(); }
+async function cleanupPythonCaches(root) {
+  for (const entry of await readdir(root, { withFileTypes: true })) {
+    const path = join(root, entry.name);
+    if (entry.isDirectory() && entry.name === '__pycache__') {
+      await rm(path, { recursive: true, force: true });
+    } else if (entry.isDirectory()) {
+      await cleanupPythonCaches(path);
+    } else if (entry.isFile() && extname(entry.name) === '.pyc') {
+      await rm(path, { force: true });
+    }
+  }
+}
 async function commandExists(command) { return await run(command, ['--version'], project, true); }
 async function runCheck(command, args, cwd) { return !(await run(command, args, cwd)); }
 async function run(command, args, cwd, quiet = false) {
