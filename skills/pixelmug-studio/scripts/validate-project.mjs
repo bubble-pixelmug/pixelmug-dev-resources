@@ -48,4 +48,13 @@ async function isDirectory(path) { try { return (await stat(path)).isDirectory()
 function isNonEmptyString(value) { return typeof value === 'string' && value.trim(); }
 async function commandExists(command) { return await run(command, ['--version'], project, true); }
 async function runCheck(command, args, cwd) { return !(await run(command, args, cwd)); }
-async function run(command, args, cwd, quiet = false) { return new Promise(resolvePromise => { const executable = process.platform === 'win32' && command === 'npm' ? 'npm.cmd' : command; const child = spawn(executable, args, { cwd, windowsHide: true, stdio: quiet ? 'ignore' : 'inherit' }); child.once('error', () => resolvePromise(false)); child.once('exit', code => resolvePromise(code === 0)); }); }
+async function run(command, args, cwd, quiet = false) {
+  return new Promise(resolvePromise => {
+    const windowsNpm = process.platform === 'win32' && command === 'npm';
+    const executable = windowsNpm ? (process.env.ComSpec || 'cmd.exe') : command;
+    const commandArgs = windowsNpm ? ['/d', '/s', '/c', ['npm.cmd', ...args].join(' ')] : args;
+    const child = spawn(executable, commandArgs, { cwd, windowsHide: true, stdio: quiet ? 'ignore' : 'inherit' });
+    child.once('error', () => resolvePromise(false));
+    child.once('exit', code => resolvePromise(code === 0));
+  });
+}
